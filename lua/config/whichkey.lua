@@ -59,8 +59,6 @@ function M.setup()
 
     c = {
       name = "Comment",
-      l = {"<cmd>lua require('Comment.api').toggle.linewise()<cr>", "Linewise"},
-      m = {"<cmd>lua require('Comment.api').toggle.blockwise()<cr>", "Blockwise"},
     },
 
     z = {

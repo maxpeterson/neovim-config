@@ -92,11 +92,17 @@ function M.setup()
     use {
       "numToStr/Comment.nvim",
       opt = true,
-      -- keys = { "c", "cl", "cm" },
+      -- keys = { "<Leader>c", "<Leader>cl", "<Leader>cm" },
       event = "BufRead",
       config = function()
         require("Comment").setup {
-          mappings = false,
+          -- mappings = false,
+          toggler = {
+            ---Line-comment toggle keymap
+            line = '<Leader>cl',
+            ---Block-comment toggle keymap
+            block = '<Leader>cm',
+          },
           pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
         }
       end,
