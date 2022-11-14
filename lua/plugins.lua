@@ -58,7 +58,7 @@ function M.setup()
 
     -- Git
     use {
-      "TimUntersberger/neogit", 
+      "TimUntersberger/neogit",
       cmd = "Neogit",
       requires = "nvim-lua/plenary.nvim",
       config = function()
@@ -67,6 +67,15 @@ function M.setup()
     }
 
     use "tpope/vim-rhubarb"
+
+    use "pbrisbin/vim-mkdir"
+
+    use {
+      "lewis6991/gitsigns.nvim",
+      config = function()
+        require("gitsigns").setup()
+      end
+    }
 
     use { "junegunn/fzf", run = "./install --all" }
     use {
@@ -153,6 +162,29 @@ function M.setup()
     use {
       "SmiteshP/nvim-navic",
       requires = "neovim/nvim-lspconfig"
+    }
+
+    -- trouble.nvim
+    use {
+      "folke/trouble.nvim",
+      event = "BufReadPre",
+      wants = "nvim-web-devicons",
+      cmd = { "TroubleToggle", "Trouble" },
+      config = function()
+        require("trouble").setup {
+          use_diagnostic_signs = true,
+        }
+      end,
+    }
+
+    -- lspsaga.nvim
+    use {
+      "tami5/lspsaga.nvim",
+      event = "VimEnter",
+      cmd = { "Lspsaga" },
+      config = function()
+        require("lspsaga").setup {}
+      end,
     }
 
     -- Treesitter
@@ -243,14 +275,27 @@ function M.setup()
       "neovim/nvim-lspconfig",
       opt = true,
       event = "BufReadPre",
-      wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp" },  -- for nvim-cmp
-      -- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
+      wants = {
+        "nvim-lsp-installer",
+        "lsp_signature.nvim",
+        "cmp-nvim-lsp",
+        "null-ls.nvim"
+      },
       config = function()
         require("config.lsp").setup()
       end,
       requires = {
         "williamboman/nvim-lsp-installer",
         "ray-x/lsp_signature.nvim",
+        "folke/neodev.nvim",
+        "RRethy/vim-illuminate",
+        "jose-elias-alvarez/null-ls.nvim",
+        {
+          "j-hui/fidget.nvim",
+          config = function()
+            require("fidget").setup {}
+          end,
+        },
       },
     }
 

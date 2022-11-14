@@ -44,10 +44,6 @@ function M.setup(servers, options)
   for server_name, _ in pairs(servers) do
     local opts = vim.tbl_deep_extend("force", options, servers[server_name] or {})
 
-    -- if server_name == "sumneko_lua" then
-    --   opts = require("lua-dev").setup { lspconfig = opts }
-    -- end
-
     if server_name == "jdtls" then
       print "jdtls is handled by nvim-jdtls"
     elseif server_name == "rust_analyzer" then

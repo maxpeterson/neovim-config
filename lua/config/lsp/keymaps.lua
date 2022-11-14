@@ -19,23 +19,26 @@ local function keymappings(client, bufnr)
   local keymap_l = {
     l = {
       name = "Code",
-      r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+      a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Action" },
+      d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
+      f = { "<cmd>Lspsaga lsp_finder<CR>", "Finder" },
+      r = { "<cmd>Lspsaga rename<CR>", "Rename" },
+      t = { "<cmd>TroubleToggle<CR>", "Trouble" },
       h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Hover" },
-      d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
     },
 
     d = {
       name = "Goto",
       d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-      r = { "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", "References" },
+      r = { "<cmd>Telescope lsp_references<CR>", "References" },
+      R = { "<cmd>Trouble lsp_references<cr>", "Trouble References" },
       D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
       I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
       s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
       t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
-      S = { "<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<CR>", "Document Symbols" },
-      w = { "<cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>", "Workspace Symbols" },
+      S = { "<cmd>Telescope lsp_document_symbols{}<CR>", "Document Symbols" },
+      w = { "<cmd>Telescope lsp_dynamic_workspace_symbols{}<CR>", "Workspace Symbols" },
     }
   }
   if client.server_capabilities.document_formatting then
