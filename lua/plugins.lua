@@ -149,6 +149,7 @@ function M.setup()
       requires = { "nvim-web-devicons" },
     }
 
+    -- statusline/winbar
     use {
       "SmiteshP/nvim-navic",
       requires = "neovim/nvim-lspconfig"

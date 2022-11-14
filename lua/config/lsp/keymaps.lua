@@ -21,6 +21,7 @@ local function keymappings(client, bufnr)
       name = "Code",
       r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+      h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Hover" },
       d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
     },
@@ -28,11 +29,13 @@ local function keymappings(client, bufnr)
     d = {
       name = "Goto",
       d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-      r = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
-      h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show Hover" },
+      r = { "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", "References" },
       D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+      I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
       s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
       t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
+      S = { "<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<CR>", "Document Symbols" },
+      w = { "<cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<CR>", "Workspace Symbols" },
     }
   }
   if client.server_capabilities.document_formatting then
