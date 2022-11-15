@@ -16,6 +16,7 @@ opt.hlsearch = true --Set highlight on search
 opt.number = true --Make line numbers default
 opt.relativenumber = true --Make relative number default
 opt.expandtab = true -- Tabs are space
+opt.hidden = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.softtabstop = 2

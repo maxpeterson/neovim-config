@@ -34,3 +34,8 @@ keymap("n", "<A-Left>", ":vertical resize +1<CR>", default_opts)
 keymap("n", "<A-Right>", ":vertical resize -1<CR>", default_opts)
 keymap("n", "<A-Up>", ":resize -1<CR>", default_opts)
 keymap("n", "<A-Down>", ":resize +1<CR>", default_opts)
+
+keymap("t", "<C-w><Left>", "<C-\\><C-n><C-w>h", default_opts)
+keymap("t", "<C-w><Up>", "<C-\\><C-n><C-w>j", default_opts)
+keymap("t", "<C-w><Down>", "<C-\\><C-n><C-w>k", default_opts)
+keymap("t", "<C-w><Right>", "<C-\\><C-n><C-w>l", default_opts)

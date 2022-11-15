@@ -66,6 +66,15 @@ function M.setup()
       end,
     }
 
+    -- Terminal
+    use {
+      "akinsho/toggleterm.nvim",
+      tag = '*',
+      config = function()
+        require("toggleterm").setup()
+      end,
+    }
+
     use "tpope/vim-rhubarb"
 
     use "pbrisbin/vim-mkdir"
