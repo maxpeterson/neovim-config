@@ -60,7 +60,7 @@ function M.setup()
       v = {"<cmd>ToggleTerm direction=vertical size=80<cr>", "Vertical"},
       h = {"<cmd>ToggleTerm direction=horizontal size=20<cr>", "Horizontal"},
       f = {"<cmd>ToggleTerm direction=float<cr>", "Float"},
-      t = {"<cmd>ToggleTerm direction=tab<cr>", "Tab"},
+      T = {"<cmd>ToggleTerm direction=tab<cr>", "Tab"},
     },
 
     w = {"<cmd>ArgWrap<cr>", "Wrap" },

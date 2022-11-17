@@ -39,7 +39,13 @@ local servers = {
       },
     },
   },
-  tsserver = {},
+  tsserver = {
+    init_options = {
+      preferences = {
+        importModuleSpecifierPreference = "relative", -- "shortest" | "project-relative" | "relative" | "non-relative";
+      },
+    },
+  },
   vimls = {},
 }
 

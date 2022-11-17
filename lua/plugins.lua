@@ -60,11 +60,35 @@ function M.setup()
     use {
       "TimUntersberger/neogit",
       cmd = "Neogit",
-      requires = "nvim-lua/plenary.nvim",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim",
+      },
       config = function()
         require("config.neogit").setup()
       end,
     }
+
+    -- GitHub
+    use {
+      "pwntester/octo.nvim",
+      cmd = "Octo",
+      wants = {
+        "plenary.nvim",
+        "telescope.nvim",
+        "nvim-web-devicons",
+      },
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
+        "kyazdani42/nvim-web-devicons",
+      },
+      config = function ()
+        require"octo".setup()
+      end
+    }
+
+    use 'mattkubej/jest.nvim'
 
     -- Terminal
     use {
