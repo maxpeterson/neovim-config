@@ -9,7 +9,7 @@ function M.setup()
   local luasnip = require "luasnip"
   local cmp = require "cmp"
 
-  cmp.setup {
+  cmp.setup({
     completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1 },
     experimental = { native_menu = false, ghost_text = false },
     snippet = {
@@ -97,7 +97,7 @@ function M.setup()
         winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
       },
     },
-  }
+  })
 
   -- Use buffer source for `/`
   cmp.setup.cmdline("/", {

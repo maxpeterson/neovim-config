@@ -347,12 +347,7 @@ function M.setup()
       "ahmedkhalf/project.nvim",
       -- event = "BufRead",
       config = function()
-        require("project_nvim").setup {
-          manual_mode = true,
-          detection_methods = { "lsp", "pattern" },
-          patterns = { ".git" },
-          --silent_chdir = true,
-        }
+        require("project_nvim").setup {}
       end,
     }
 
